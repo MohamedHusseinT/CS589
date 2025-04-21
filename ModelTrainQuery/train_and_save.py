@@ -1,6 +1,8 @@
 import boto3
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+#from langchain.embeddings import HuggingFaceEmbeddings
+#from langchain.vectorstores import FAISS
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
 from langchain.docstore.document import Document
 
 def load_txt_files_from_s3(bucket, prefix):
