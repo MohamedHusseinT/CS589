@@ -1,11 +1,21 @@
-from langchain.llms import LlamaCpp
+#from langchain.llms import LlamaCpp
 from langchain.chains import RetrievalQA
+#from langchain.vectorstores import FAISS
+#from langchain.embeddings import HuggingFaceEmbeddings
+
+from langchain.llms import LlamaCpp
 from langchain.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 
+
+
+#def load_vectorstore(path="vector_index"):
+#    embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+#    return FAISS.load_local(path, embedding)
 def load_vectorstore(path="vector_index"):
     embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    return FAISS.load_local(path, embedding)
+    return FAISS.load_local(path, embedding, allow_dangerous_deserialization=True)
+
 
 def setup_llama_model():
     return LlamaCpp(
