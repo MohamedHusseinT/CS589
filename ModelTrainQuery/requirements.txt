@@ -1,0 +1,5 @@
+boto3
+langchain
+faiss-cpu
+sentence-transformers
+llama-cpp-python
